@@ -1,4 +1,5 @@
 import React from 'react';
+import { ListGroup, CloseButton } from 'react-bootstrap';
 
 const TodoItem = props => {
   const handleDelete = () => {
@@ -6,9 +7,13 @@ const TodoItem = props => {
   };
   return (
     <>
-      <li key={props.id}>
-        {props.title} ({props.description})<button onClick={handleDelete}>Delete</button>
-      </li>
+      <ListGroup.Item key={props.id} className='d-flex justify-content-between'>
+        <div>
+          <h6>{props.title}</h6>
+          <p className='mb-0'>{props.description}</p>
+        </div>
+        <CloseButton onClick={handleDelete} />
+      </ListGroup.Item>
     </>
   );
 };

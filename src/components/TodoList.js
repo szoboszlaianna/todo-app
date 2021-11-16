@@ -1,15 +1,16 @@
 import React from 'react';
+import { ListGroup } from 'react-bootstrap';
 import TodoItem from './TodoItem';
 
 const TodoList = props => {
   return (
-    <div>
-      <ul>
+    <>
+      <ListGroup className='p-3'>
         {props.todos.map(todo => (
           <TodoItem id={todo.id} title={todo.title} description={todo.description} onDelete={props.onDelete} />
         ))}
-      </ul>
-    </div>
+      </ListGroup>
+    </>
   );
 };
 

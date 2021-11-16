@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 
 const AddTodo = props => {
   const [enteredTitle, setEnteredTitle] = useState('');
@@ -20,15 +21,22 @@ const AddTodo = props => {
   };
 
   return (
-    <div>
-      <form onSubmit={addTodoHandler}>
-        <label htmlFor='title'>Title</label>
-        <input id='title' type='text' onChange={titleChangeHandler} value={enteredTitle} />
-        <label htmlFor='description'>Description</label>
-        <textarea id='description' type='text' onChange={descriptionChangeHandler} value={enteredDescription} />
-        <button type='submit'>Add</button>
-      </form>
-    </div>
+    <>
+      <Form className='d-flex flex-column mb-3 p-3' onSubmit={addTodoHandler}>
+        <h1 className='m-auto'>To-do app</h1>
+        <Form.Group className='mb-3 p-3' controlId='exampleForm.ControlInput1'>
+          <Form.Label>Title</Form.Label>
+          <Form.Control id='title' label='Title' type='text' onChange={titleChangeHandler} value={enteredTitle} required />
+        </Form.Group>
+        <Form.Group className='mb-3 p-3' controlId='exampleForm.ControlInput1'>
+          <Form.Label>Description</Form.Label>
+          <Form.Control id='description' type='text' label='description' onChange={descriptionChangeHandler} value={enteredDescription} as='textarea' rows={3} required />
+        </Form.Group>
+        <Button className='align-self-end' type='submit'>
+          Add
+        </Button>
+      </Form>
+    </>
   );
 };
 
