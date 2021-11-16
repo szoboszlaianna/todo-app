@@ -7,7 +7,7 @@ const TodoItem = props => {
   };
   return (
     <>
-      <ListGroup.Item key={props.id} className='d-flex justify-content-between'>
+      <ListGroup.Item className='d-flex justify-content-between'>
         <div>
           <h6>{props.title}</h6>
           <p className='mb-0'>{props.description}</p>

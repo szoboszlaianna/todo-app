@@ -7,7 +7,7 @@ const TodoList = props => {
     <>
       <ListGroup className='p-3'>
         {props.todos.map(todo => (
-          <TodoItem key={todo.id} title={todo.title} description={todo.description} onDelete={props.onDelete} />
+          <TodoItem key={todo.id} id={todo.id} title={todo.title} description={todo.description} onDelete={props.onDelete} />
         ))}
       </ListGroup>
     </>
