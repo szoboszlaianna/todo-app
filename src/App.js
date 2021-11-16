@@ -3,7 +3,6 @@ import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Navbar } from 'react-bootstrap';
 
 function App() {
   const initialList = window.localStorage.getItem('todos') ? JSON.parse(window.localStorage.getItem('todos')) : [];
