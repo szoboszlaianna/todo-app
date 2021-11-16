@@ -22,15 +22,15 @@ const AddTodo = props => {
 
   return (
     <>
-      <Form className='d-flex flex-column mb-3 p-3' onSubmit={addTodoHandler}>
+      <Form className='form d-flex flex-column mb-3 p-3' onSubmit={addTodoHandler} aria-label='form'>
         <h1 className='m-auto'>To-do app</h1>
         <Form.Group className='mb-3 p-3' controlId='exampleForm.ControlInput1'>
           <Form.Label>Title</Form.Label>
-          <Form.Control id='title' label='Title' type='text' onChange={titleChangeHandler} value={enteredTitle} required />
+          <Form.Control type='text' aria-label='title' name='title' onChange={titleChangeHandler} value={enteredTitle} required />
         </Form.Group>
-        <Form.Group className='mb-3 p-3' controlId='exampleForm.ControlInput1'>
+        <Form.Group area-label='description' className='mb-3 p-3' controlId='exampleForm.ControlInput1'>
           <Form.Label>Description</Form.Label>
-          <Form.Control id='description' type='text' label='description' onChange={descriptionChangeHandler} value={enteredDescription} as='textarea' rows={3} required />
+          <Form.Control type='text' aria-label='description' name='description' onChange={descriptionChangeHandler} value={enteredDescription} as='textarea' rows={3} required />
         </Form.Group>
         <Button className='align-self-end' type='submit'>
           Add
